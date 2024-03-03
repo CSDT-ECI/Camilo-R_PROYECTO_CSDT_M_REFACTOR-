@@ -79,3 +79,7 @@ al acceder a http://localhost:8080/ en uno de los paths de web app, se vera de l
 [![08Ventas.png](https://i.postimg.cc/LsbRnKpk/08Ventas.png)](https://postimg.cc/mcCK5nhh)
 [![09reportes.png](https://i.postimg.cc/wxJHTGbJ/09reportes.png)](https://postimg.cc/bdz4m3PN)
 [![10proy-soft-Tienda.png](https://i.postimg.cc/L84MD64B/10proy-soft-Tienda.png)](https://postimg.cc/1fdT5Sqf)
+
+## Entregables
+
+- [01 Refactoring + Code Smells]()
