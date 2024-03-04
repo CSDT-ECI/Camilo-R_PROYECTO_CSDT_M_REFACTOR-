@@ -82,4 +82,4 @@ al acceder a http://localhost:8080/ en uno de los paths de web app, se vera de l
 
 ## Entregables
 
-- [01 Refactoring + Code Smells]()
+- [01 Refactoring + Code Smells](https://github.com/CSDT-ECI/Camilo-R_PROYECTO_CSDT_M_REFACTOR-/blob/entrega1/CODE_SMELLS/02-CODE_SMELLS.md)

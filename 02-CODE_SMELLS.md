@@ -82,9 +82,9 @@ info(), error(), trace()
 ```
 
 
-## Problema 3 No existe una incorrecta delgacion de responsabilidades en la clases y no uso de abtracciones e interfaces
+## Problema 3 existe una incorrecta delegación de responsabilidades en la clase y no uso de atracciones e interfaces
 
-ya que en la capa de los controladores, estan usando directamente la capa de persitencia, esto puede causar un problema ya que si en un futuro se desea hacer un cambio de a una base de datos relacional a no relacional deben modificar el codigo y no estariamos violando el principio de cerrado a modificaciones y abierto a extensiones.
+La capa de los controladores, están usando directamente la capa de persistencia, esto puede causar un problema, ya que si en un futuro se desea hacer un cambio de a una base de datos relacional a no relacional deben modificar el código y estaríamos violando el principio de cerrado a modificaciones y abierto a extensiones. 
 
 
 ```java
@@ -102,6 +102,48 @@ public class ClienteController {
 Se propondría crear una capa intermedia entre el controlador y la capa de persistencia, que implemente una interfaz con los métodos base del CRUD del objeto en cuestión, que permitiría a crear una nueva implementación según sea necesario, también me apoyaría de las inyecciones de dependencias que tiene Spring Boot, como lo es con la etiqueta @Autowired
 
 ```java
+@RestController
+public class ClienteController {
+    @Autowired
+    @Quailifier("userServiceNoSQL")
+    private UserService userService;
+
+	@RequestMapping("/addClient")
+	public ResponseDTO addCLient(ClientDTO clientDto) {
+		return userService.addCliente(clientDto);
+    }
+}
+
+
+public interface UserService {
+    ResponseDTO addCLient(ClientDTO clientDto);
+} 
+
+@Service("userServiceSQL")
+public class userServiceSQL implements UserService{
+    @Autowired
+    private UserRepository sqlRepository;
+
+    ResponseDTO addCLient(ClientDTO clientDto){
+        Client client = mapper.map(clientDTO);
+        sqlRepository.save();
+        return ResponseDTO;
+
+    }
+} 
+
+
+@Service("userServiceNoSQL")
+public class userServiceNoSQL implements UserService{
+    @Autowired
+    private UserRepository noSqlRepository;
+
+    ResponseDTO addCLient(ClientDTO clientDTO){
+            Client client = mapper.map(clientDTO);
+            noSqlRepository.save();
+            return ResponseDTO;
+    }
+} 
 
 ```
 
@@ -149,7 +191,9 @@ public class TiendaApplication {
 
 Eliminar todo codigo duplicado y más si esta causa que la aplicacion no inicie.
 
-## Problema 5 no existe la capa da data bien definida con la cual la capa de persistencia se pueda guiar
+## Problema 5 capa de datos
+
+no existe la capa da data bien definida con la cual la capa de persistencia se pueda guiar, ya que el sistema parte que ya existe en la db.
 
 ### Aproximación de refactor
 
