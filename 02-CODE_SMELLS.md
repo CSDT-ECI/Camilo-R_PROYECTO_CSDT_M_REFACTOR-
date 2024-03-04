@@ -150,3 +150,38 @@ public class TiendaApplication {
 Eliminar todo codigo duplicado y más si esta causa que la aplicacion no inicie.
 
 ## Problema 5 no existe la capa da data bien definida con la cual la capa de persistencia se pueda guiar
+
+### Aproximación de refactor
+
+## Problema 6  estrucutra del proyecto 
+
+
+ Estructura del proyecto no se encuentra bien definida, ya que la mayoría de las clases se encuentran en un solo paquete 
+
+<br/>
+<img src="images/11-EstructuraProyecto.png" alt="EstructuraProyecto" style="max-width: 80%;max-width: 80%;">
+<br/>
+
+### Aproximación de refactor
+
+se propone la siguiente estrucutura
+
+```
+├───src
+│   ├───main
+│   │   ├───java
+│   │   │   └───com
+│   │   │       └───soft
+│   │   │             └───tienda
+│   │   │                   └───models
+│   │   │                   ├───controllers
+│   │   │                   ├───dto
+│   │   │                   │   ├───request
+│   │   │                   │   └───response
+│   │   │                   ├───repositories
+│   │   │                   └───services
+│   │   └───resources
+│   │       ├───static
+│   │       └───templates
+
+```
