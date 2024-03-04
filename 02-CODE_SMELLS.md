@@ -99,7 +99,7 @@ public class ClienteController {
 ```
 ### Aproximación de refactor
 
-Se propondría crear una capa intermedia entre el controlador y la capa de persistencia, que implemente una interfaz con los métodos base del CRUD del objeto en cuestión, que permitiría a crear una nueva implementación según sea necesario, también me apoyaría de las inyecciones de dependencias que tiene Spring Boot, como lo es con la etiqueta @Autowired
+Se propondría crear una capa intermedia entre el controlador y la capa de persistencia, que implemente una interfaz con los métodos base del CRUD del objeto en cuestión, ya que asi permitiría crear una nueva implementación según sea necesario por medio de abstracciones, también me apoyaría de las inyecciones de dependencias que tiene Spring Boot, como lo es con la etiqueta @Autowired
 
 ```java
 @RestController
@@ -120,7 +120,7 @@ public interface UserService {
 } 
 
 @Service("userServiceSQL")
-public class userServiceSQL implements UserService{
+public class UserServiceSQL implements UserService{
     @Autowired
     private UserRepository sqlRepository;
 
@@ -134,7 +134,7 @@ public class userServiceSQL implements UserService{
 
 
 @Service("userServiceNoSQL")
-public class userServiceNoSQL implements UserService{
+public class UserServiceNoSQL implements UserService{
     @Autowired
     private UserRepository noSqlRepository;
 
