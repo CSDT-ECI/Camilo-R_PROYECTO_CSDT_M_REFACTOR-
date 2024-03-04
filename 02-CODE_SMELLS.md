@@ -82,7 +82,7 @@ info(), error(), trace()
 ```
 
 
-## Problema 3 existe una incorrecta delegación de responsabilidades en la clase y no uso de atracciones e interfaces
+## Problema 3 existe una incorrecta delegación de responsabilidades en la clase y no uso de abstracciones e interfaces
 
 La capa de los controladores, están usando directamente la capa de persistencia, esto puede causar un problema, ya que si en un futuro se desea hacer un cambio de a una base de datos relacional a no relacional deben modificar el código y estaríamos violando el principio de cerrado a modificaciones y abierto a extensiones. 
 
