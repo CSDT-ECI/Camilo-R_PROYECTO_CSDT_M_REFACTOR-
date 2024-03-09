@@ -6,9 +6,12 @@ SofTienda. Es una aplicación web con arquitectura monolítica, la cual le permi
 ### Autor repositorio base
 - Alexander Campos - AlexanderCamposV - [SoftTienda](https://github.com/AlexanderCamposV/Proyecto-CRUD-Monolito-Java-SpringBoot-MariaDB)
 
+## Entregables
+
+- [01 Refactoring + Code Smells](02-CODE_SMELLS.md)
+- [02 Clean Code + XP Practices](03-CLEAN_CODE_XP_PRACTICES.md)
+
 ### Arquitectura de Alto nivel inicial
-
-
 
 Para esto modelamos a un alto nivel, como se encuentra la aplicación base. Como podemos observar en el siguiente gráfico se muestra un monolito, el cual no cuenta con una capa de seguridad definida, el problema con este tipo de arquitectura es que en aspectos como la escalabilidad y rendimiento, puede llegar a ser muy costoso ya que solo se puede presentar una escalabilidad vertical, la cual en algun punto no podra crecer más.
 
@@ -73,13 +76,10 @@ al acceder a http://localhost:8080/ en uno de los paths de web app, se vera de l
 [![02usuarios.png](https://i.postimg.cc/MHy8Pnjt/02usuarios.png)](https://postimg.cc/p5X7yXCn)
 [![03agregar-usuario.png](https://i.postimg.cc/d01wsQzt/03agregar-usuario.png)](https://postimg.cc/18LLMSmL)
 [![04editar-usuario.png](https://i.postimg.cc/mkxsyYht/04editar-usuario.png)](https://postimg.cc/ygTtVSmH)
-[05buscar-usuario.png](https://postimg.cc/wyzn8ks2)
+[![05buscar-usuario.png]](https://postimg.cc/wyzn8ks2)
 [![06clientes.png](https://i.postimg.cc/020s7Jvy/06clientes.png)](https://postimg.cc/MvHNSHXC)
 [![07proveedores.png](https://i.postimg.cc/WbvVDwQy/07proveedores.png)](https://postimg.cc/qgjSSyBc)
 [![08Ventas.png](https://i.postimg.cc/LsbRnKpk/08Ventas.png)](https://postimg.cc/mcCK5nhh)
 [![09reportes.png](https://i.postimg.cc/wxJHTGbJ/09reportes.png)](https://postimg.cc/bdz4m3PN)
 [![10proy-soft-Tienda.png](https://i.postimg.cc/L84MD64B/10proy-soft-Tienda.png)](https://postimg.cc/1fdT5Sqf)
 
-## Entregables
-
-- [01 Refactoring + Code Smells](https://github.com/CSDT-ECI/Camilo-R_PROYECTO_CSDT_M_REFACTOR-/blob/entrega1/CODE_SMELLS/02-CODE_SMELLS.md)
