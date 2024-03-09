@@ -116,7 +116,25 @@ Empezar a realizar las pruebas de cada uno de los servicios, para ir fomentando 
 
 ## Principios de Programación a revisar
 
-Cuales principios de Programación no se están cumpliendo documentar sus conclusiones
+### Incumplimiento Dependency Inversion Principle y de Open / Close
+
+Este principio SOLID "D", nos menciona que deberíamos depender de abstracciones más no de clases concretas, esto porque en caso de que el sistema evolucione y un servicio actual diseñado con una clase concreta pase a ser obsoleto, debemos modificar el código para actualizarlo con el servicio nuevo causando otra violación al principio Open/Close abierto a extensiones y cerrado a modificaciones, es por esto que si tuviéramos interfaces y/o clases abstractas el cambio sería más simple, ya que nos podríamos apoyar con inyección de dependencias, e instanciar una instancia u otra, para que se aplique el respectivo polimorfismo en el programa y causando que lo único que se modifique sea qué instancia inyectar. 
+
+en este caso incluso podemos verlo en la capa de persitencia del proyecto ya que esta implementada sobre una clase concreta
+
+
+```java
+public class VentasDAO {
+    Connection connection;
+    Conexion conexion = new Conexion();
+    PreparedStatement ps;
+    ResultSet rs;
+
+    // mas codigo
+}
+```
+
+si dependiera de interfaces, podriamos tener un DAO para una base de datos SQL y/o en un futuro sobre una clase NoSQL
 
 ## Practicas XP para mejorar
 
