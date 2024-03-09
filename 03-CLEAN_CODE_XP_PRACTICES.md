@@ -7,6 +7,57 @@ de las que no se están cumpliendo indicar algunas recomendaciones
 
 ### Cumplimiento de clean code
 
+1. Principio de menor asombro: considero que el autor del proyecto coloca nombres dicientes de los metodos que ha creado a nivel de controladores y nivel capa de persistencia ya que son nombres descriptivos
+
+```java
+public class ClienteController {
+
+@RequestMapping("/registrarCliente")
+public void registrarCliente(ClienteDTO clienteDto) {
+    ClienteDAO clientDao = new ClienteDAO();
+    clientDao.registrarCliente(clienteDto);
+} 
+```
+
+En el ejemplo anterior podemos observar que tanto la ruta del controlador y su método es muy claro que en caso de ser llamado registrarCliente, se realizara la operación CREATE del servicio enfocado a cliente.
+
+2. Entendible: de cierta forma siento que al tener nombres de metodos muy dicientes y nombre de variables claras, es facil de entender la logica que esta hecha en el codigo fuente, aunque se puede mejorar
+
+```java
+public ArrayList<ProductoDTO> listaDeProductos(){
+    ArrayList<ProductoDTO> miProducto = new ArrayList<ProductoDTO>();
+    Conexion conexion = new Conexion();
+    
+    try {
+        PreparedStatement consulta = conexion.getConnection().prepareStatement("SELECT * FROM productos");
+        ResultSet res = consulta.executeQuery();
+        while(res.next()) {
+            ProductoDTO productoDto = new ProductoDTO();
+            productoDto.setCodigoProducto(Long.parseLong(res.getString("codigo_producto")));
+            productoDto.setNombreProducto(res.getString("nombre_producto"));
+            productoDto.setNitProveedor(Long.parseLong(res.getString("nit_proveedor")));
+            productoDto.setPrecioCompra(Double.parseDouble(res.getString("precio_compra")));
+            productoDto.setIvaCompra(Double.parseDouble(res.getString("iva_compra")));
+            productoDto.setPrecioVenta(Double.parseDouble(res.getString("precio_venta")));
+    
+            miProducto.add(productoDto);
+    
+            System.out.print(miProducto);
+        }
+        res.close();
+        consulta.close();
+        conexion.desconectar();
+    }
+    catch(Exception e){
+    }
+```
+
+En el caso anterior listaDeProductos, sabemos que él va a tratar de listar los productos que existan en la DB, además de esto sabemos que por medio de la variable consulta (consulta base para cargar los productos) junto a la ayuda de la variable conexión (conexión de base de datos), podrá cargar todos los productos que existan de la base de datos.
+Sin embargo, si se puede mejorar los nombres de otras variables, ya que en el caso de **ResultSet res = consulta.executeQuery();** "res" no es muy descriptivo.
+
+
+
+
 ### No Cumplimiento de clean code
 
 #### Aspecto 1: Problemas con la Escalabilidad
