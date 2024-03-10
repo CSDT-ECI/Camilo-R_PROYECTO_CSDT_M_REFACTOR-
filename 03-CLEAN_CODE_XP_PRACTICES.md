@@ -139,3 +139,7 @@ si dependiera de interfaces, podriamos tener un DAO para una base de datos SQL y
 ## Practicas XP para mejorar
 
 Cuales prácticas XP considera podrían utilizarse para mejorar la calidad del código
+
+1. TDD, el tdd nos ayudara a crear pruebas que no son sesgadas por la implementacion del codigo
+2. Realizar integracion continua una, vez que tengamos nuestras pruebas e implementacion nos permitira detectar errores o comportamientos no deseados en etapas tempranas
+3. Refactoring, en este caso para mejorar la calidad de codigo de la aplicacion, como se menciono anteriormente se plantea usar diferentes practicas de refactoring en son de mejorar la aplicacion.
