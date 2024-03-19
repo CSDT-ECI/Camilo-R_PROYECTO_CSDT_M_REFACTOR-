@@ -1,12 +1,12 @@
-package com.soft.tienda;
+package com.soft.tienda.controllers;
 
 import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.soft.tienda.DAO.ProveedorDAO;
-import com.soft.tienda.DTO.ProveedorDTO;
+import com.soft.tienda.deprecated.ProveedorDAO;
+import com.soft.tienda.dto.ProveedorDTO;
 
 @RestController
 public class ProveedorController {

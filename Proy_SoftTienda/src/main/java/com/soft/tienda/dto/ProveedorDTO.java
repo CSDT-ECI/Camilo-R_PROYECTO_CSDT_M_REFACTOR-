@@ -1,4 +1,4 @@
-package com.soft.tienda.DTO;
+package com.soft.tienda.dto;
 
 public class ProveedorDTO {
 	private long nitProveedor;

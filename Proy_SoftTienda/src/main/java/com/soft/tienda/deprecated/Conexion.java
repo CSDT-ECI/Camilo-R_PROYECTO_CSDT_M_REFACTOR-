@@ -1,7 +1,8 @@
-package com.soft.tienda.DAO;
+package com.soft.tienda.deprecated;
 
 import java.sql.*;
 
+@Deprecated
 public class Conexion {
 	
 	

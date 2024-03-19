@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 //import com.soft.tienda.DAO.UsuarioDAO;
-import com.soft.tienda.DAO.VentasDAO;
-import com.soft.tienda.DTO.DetallesVentaDTO;
+import com.soft.tienda.deprecated.VentasDAO;
+import com.soft.tienda.dto.DetallesVentaDTO;
 //import com.soft.tienda.DTO.UsuarioDTO;
-import com.soft.tienda.DTO.Ventas;
+import com.soft.tienda.entities.Ventas;
 
 
 @RestController

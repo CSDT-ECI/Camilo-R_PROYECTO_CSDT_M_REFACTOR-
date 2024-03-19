@@ -1,4 +1,4 @@
-package com.soft.tienda.DAO;
+package com.soft.tienda.deprecated;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,11 +8,11 @@ import java.sql.Statement;
 
 //import javax.swing.JOptionPane;
 
-import com.soft.tienda.DTO.DetallesVentaDTO;
+import com.soft.tienda.dto.DetallesVentaDTO;
 //import com.soft.tienda.DTO.UsuarioDTO;
-import com.soft.tienda.DTO.Ventas;
+import com.soft.tienda.entities.Ventas;
 
-
+@Deprecated
 public class VentasDAO {
 	Connection connection;
 	Conexion conexion = new Conexion();

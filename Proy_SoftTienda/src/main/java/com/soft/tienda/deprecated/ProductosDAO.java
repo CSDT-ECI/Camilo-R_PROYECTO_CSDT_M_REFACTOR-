@@ -1,12 +1,12 @@
-package com.soft.tienda.DAO;
+package com.soft.tienda.deprecated;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import com.soft.tienda.DTO.ProductoDTO;
-
+import com.soft.tienda.dto.ProductoDTO;
+@Deprecated
 public class ProductosDAO {
 	PreparedStatement preparedStatement;
 	
@@ -27,9 +27,9 @@ public class ProductosDAO {
 				productoDto.setPrecioCompra(Double.parseDouble(res.getString("precio_compra")));
 				productoDto.setIvaCompra(Double.parseDouble(res.getString("iva_compra")));
 				productoDto.setPrecioVenta(Double.parseDouble(res.getString("precio_venta")));
-				
+
 				miProducto.add(productoDto);
-				
+
 				System.out.print(miProducto);
 				}
 				res.close();

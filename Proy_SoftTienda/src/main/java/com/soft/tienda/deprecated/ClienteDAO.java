@@ -1,4 +1,4 @@
-package com.soft.tienda.DAO;
+package com.soft.tienda.deprecated;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,8 +7,9 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import com.soft.tienda.DTO.ClienteDTO;
+import com.soft.tienda.dto.ClienteDTO;
 
+@Deprecated
 public class ClienteDAO {
 PreparedStatement preparedStatement;
 	

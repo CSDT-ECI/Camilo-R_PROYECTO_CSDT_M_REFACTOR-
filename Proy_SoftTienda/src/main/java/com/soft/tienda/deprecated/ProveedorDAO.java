@@ -1,12 +1,13 @@
-package com.soft.tienda.DAO;
+package com.soft.tienda.deprecated;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import com.soft.tienda.DTO.ProveedorDTO;
+import com.soft.tienda.dto.ProveedorDTO;
 
+@Deprecated
 public class ProveedorDAO {
 	PreparedStatement preparedStatement;
 	

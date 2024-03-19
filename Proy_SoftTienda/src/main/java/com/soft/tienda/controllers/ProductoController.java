@@ -1,12 +1,12 @@
-package com.soft.tienda;
+package com.soft.tienda.controllers;
 
 import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.soft.tienda.DAO.ProductosDAO;
-import com.soft.tienda.DTO.ProductoDTO;
+import com.soft.tienda.deprecated.ProductosDAO;
+import com.soft.tienda.dto.ProductoDTO;
 
 @RestController
 public class ProductoController {

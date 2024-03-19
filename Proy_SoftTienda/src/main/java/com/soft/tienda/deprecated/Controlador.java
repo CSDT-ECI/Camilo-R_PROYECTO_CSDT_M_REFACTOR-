@@ -1,4 +1,4 @@
-package com.soft.tienda;
+package com.soft.tienda.deprecated;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Controlador
  */
+@Deprecated
 @WebServlet("/Controlador")
 public class Controlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;

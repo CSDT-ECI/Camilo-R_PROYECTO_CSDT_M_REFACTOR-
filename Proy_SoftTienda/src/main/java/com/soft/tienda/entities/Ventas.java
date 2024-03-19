@@ -1,4 +1,4 @@
-package com.soft.tienda.DTO;
+package com.soft.tienda.entities;
 
 public class Ventas {
 	private long codigo_venta;

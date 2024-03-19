@@ -1,7 +1,6 @@
-package com.soft.tienda.DTO;
+package com.soft.tienda.entities;
 
-public class DetallesVentaDTO {
-	
+public class DetalleVenta {
 	private long codigo_detalle_venta;
 	private int cantidad_producto;
 	private long codigo_producto;
@@ -9,7 +8,6 @@ public class DetallesVentaDTO {
 	private double valor_total;
 	private double valor_iva;
 	private double valor_venta;
-	
 	
 	public long getCodigo_detalle_venta() {
 		return codigo_detalle_venta;
@@ -55,5 +53,4 @@ public class DetallesVentaDTO {
 	}
 	
 	
-
 }

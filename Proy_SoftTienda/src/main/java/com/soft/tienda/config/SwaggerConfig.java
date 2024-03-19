@@ -1,4 +1,4 @@
-package com.soft.tienda;
+package com.soft.tienda.config;
 
 //import java.util.Arrays;
 import java.util.Collections;
