@@ -2,6 +2,7 @@ package com.soft.tienda.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,7 @@ import com.soft.tienda.dto.ClienteDTO;
 
 @RestController
 public class ClienteController {
+
 	
 	@RequestMapping("/registrarCliente")
 	public void registrarCliente(ClienteDTO clienteDto) {
