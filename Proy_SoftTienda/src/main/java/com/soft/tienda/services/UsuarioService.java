@@ -1,8 +1,7 @@
 package com.soft.tienda.services;
 
-import com.soft.tienda.dto.UsuarioDTO;
+import com.soft.tienda.entities.Usuario;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,8 +9,9 @@ import java.util.List;
  */
 public interface UsuarioService {
 
-    List<UsuarioDTO> consultarUsuarios();
+    List<Usuario> consultarUsuarios();
 
+    Usuario consultarUsuarioPorCorreoElectronico(String correo);
 
 
 }
