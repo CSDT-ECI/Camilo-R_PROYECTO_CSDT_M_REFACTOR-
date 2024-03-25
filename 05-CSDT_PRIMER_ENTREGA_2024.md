@@ -124,6 +124,12 @@ abrimos de manera local en el puerto 9000
    <img src="images/19-sonar_running-2.png" alt="19-sonar_running-2.png" style="max-width: 80%;max-width: 80%;">
    <br/>
 
+
+si queremos validar de manera local el reporte ejecutamos el comando
+
+```bash
+mvn clean verify sonar:sonar -Dsonar.projectKey=test01 -Dsonar.projectName='SoftTienda' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_2b124e2c8943797d49a935638d9270f6e6d6f7d0
+```
 ## Conclusiones
 
 
