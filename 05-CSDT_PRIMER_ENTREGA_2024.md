@@ -61,42 +61,47 @@ permisos para la integración, de momento para ver qué resultados se generaran,
 ### plantilla de work-flow
 
 ```yml
-# Feel free to take a look at our documentation (https://docs.sonarcloud.io/getting-started/github/)
-# or reach out to our community forum if you need some help (https://community.sonarsource.com/c/help/sc/9)
-
-name: SonarCloud analysis
+name: Build
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-  workflow_dispatch:
+    branches:
+      - main
+      - entregaFinalPrimerCorte/STATIC_CODE_ANALYZER
+    pull_request:
+      types: [ opened, synchronize, reopened ]
 
-permissions:
-  pull-requests: read # allows SonarCloud to decorate PRs with analysis results
 
 jobs:
-  Analysis:
+  build:
+    name: Build
     runs-on: ubuntu-latest
-
+    permissions: read-all
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
+      - uses: actions/checkout@v2
         with:
-          java-version: '17'
-      - name: Build with Maven
-        run: mvn clean verify
-
-      - name: Analyze with SonarCloud
-        # You can pin the exact commit or the version.
-        # uses: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
-        uses: SonarSource/sonarcloud-github-action@master
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      - name: Cache SonarQube packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        run: mvn -B -f Proy_SoftTienda/pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=test01 -Dsonar.projectName='SoftTienda' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=${SONAR_TOKEN}
 ```
 
 ### Sonarqube con docker
@@ -138,4 +143,8 @@ mvn clean verify sonar:sonar -Dsonar.projectKey=test01 -Dsonar.projectName='Soft
 
 ## Conclusiones
 
-
+1. El reporte generado por sonar nos permitió encontrar que el proyecto principalmente en cuanto a la seguridad y el mantenimiento.
+2. Este tipo de herramientas nos permiten realizar una detección temprana de problemas, relacionados con la calidad del código. Logrando que estos problemas no lleguen a avanzar mucho en el desarrollo de software y solo queden en la etapa de desarrollo
+3. Este tipo de herramientas fomentan la mejora de prácticas de programación
+4. En el caso de sonarqube, tiene diversos paneles, métricas y gráficas que permite de una manera muy visual entender que debemos mejorar dentro de nuestro código
+5. Estas herramientas se pueden automatizar para que siempre Nos manden alertas en caso de que inyectemos problemas a nuestro código
