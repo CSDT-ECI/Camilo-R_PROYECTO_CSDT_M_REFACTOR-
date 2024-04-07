@@ -22,5 +22,8 @@ Además de esto nos apoyaremos con el uso de herramientas desarrolladas con inte
 ### Inteligencia Artificial como herramienta
 
 
+### Conclusiones
+
+
 ## Bibliografia 
 * [Mastering-GitHub-Copilot-for-Paired-Programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming?WT.mc_id=academic-113596-abartolo)
