@@ -20,8 +20,9 @@ Además de esto nos apoyaremos con el uso de herramientas desarrolladas con inte
 * El proyecto no cuenta con una documentación base y hay algunas clases donde sus declaraciones de variables, funciones y/o lógica no permitía tener claridad de lo que se estaba tratando de implementar
 
 
-como se puede observar en el siguiente ejemplo no encontramos documentacion para la capa de VentasDao en la clase y en el metodo tiene un comentario el cual no nos funcionaria en caso de tener la necesidad de generar la documentacion con javadoc,
-ademas si nos percatamos el meotodo consecutivoFactura(), nos da a entender que consultaremos un consecutivo a asignar a la nueva factura, pero se podria renombrar a obtenerConsecutivoDisponibleParaFactura() 
+Como se puede observar en el siguiente ejemplo no encontramos documentación para la capa la clase VentasDao ni en el metodo, ya que como se puede observar este tiene un comentario el cual no nos funcionaría en caso de tener la necesidad de generar la documentación con javadoc,
+además, si nos percatamos el método consecutivoFactura(), nos da a entender que consultaremos un consecutivo a asignar a la nueva factura, pero se podría renombrar a obtenerConsecutivoDisponibleParaFactura()
+
 ```java
 public class VentasDAO {
 	Connection connection;
@@ -50,16 +51,14 @@ public class VentasDAO {
 
 ```
 
-este aspecto puede llegar a desmotivar al momento de desarrollar o refactorizar viejas/nuevas funcionalidades, ya que se debe ir pagando esa deduda tecnica que existia al inicio del proyecto
+Este aspecto puede llegar a desmotivar al momento de desarrollar o refactorizar viejas/nuevas funcionalidades, ya que se debe ir pagando esa deuda técnica de documentación que existían el proyecto base, para esta y las demás clases,
+si olvidar también que el proyecto tampoco cuenta con documentación a nivel del API expuesto, puesto que aunque tiene configurado swagger por defecto, esta no tiene descripción de los diferentes endpoints
 
-
-ademas de esto el proyecto tampoco cuenta con documentacion a nivel del API expuesto, ya que aunque tiene configurado swagger por defecto esta no tiene descripcion de los diferentes endpoints
 
 * Al no tener pruebas unitarias o algún tipo de pruebas en el proyecto base, las cuales  nos permitan saber si el comportamiento del sistema es el esperado, empezar a pagar dicha deuda puede llegar a ser un poco des motivadora, ya que sería un trabajo adicional
 
-* 
+* Cuando se empezó a revisar el proyecto por primera vez, fue muy difícil ver el estado del proyecto y qué calidad tenía este, ya que no contaba con herramientas de analis de código estático, ni de cobertura.
 
-* 
 
 ### Métricas a implementar
 
