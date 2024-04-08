@@ -35,6 +35,8 @@ public class ProductoServiceImpl implements IProductoService {
                 .build();
     }
 
+
+
     @Override
     @Transactional(readOnly = true)
     public RespuestaServicioDTO findById(Long id) {
@@ -82,7 +84,7 @@ public class ProductoServiceImpl implements IProductoService {
                 .build();
         try {
             Producto producto = productoRepository.findById(id)
-                    .orElseThrow(() -> new NoSuchElementException(""));
+                    .orElseThrow(() -> new NoSuchElementException("Producto no encontrado"));
             productoRepository.deleteById(id);
             dto.setData(List.of(producto));
         } catch (NoSuchElementException e) {
@@ -93,6 +95,7 @@ public class ProductoServiceImpl implements IProductoService {
         return dto;
     }
 
+
     @Override
     public RespuestaServicioDTO updateProduct(Long id, Producto producto) {
         RespuestaServicioDTO dto = RespuestaServicioDTO.builder()
@@ -101,7 +104,7 @@ public class ProductoServiceImpl implements IProductoService {
                 .build();
         try {
             Producto productoExistente = productoRepository.findById(id)
-                    .orElseThrow(() -> new NoSuchElementException(""));
+                    .orElseThrow(() -> new NoSuchElementException("Producto no encontrado"));
 
             productoExistente.setNombre(producto.getNombre());
             productoExistente.setPrecio(producto.getPrecio());
