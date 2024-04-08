@@ -1,44 +1,62 @@
 package com.soft.tienda.controllers;
 
-import java.util.ArrayList;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.soft.tienda.deprecated.ProductosDAO;
-import com.soft.tienda.dto.ProductoDTO;
+import com.soft.tienda.dto.response.RespuestaServicioDTO;
+import com.soft.tienda.entities.Producto;
+import com.soft.tienda.services.IProductoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProductoController {
-	
-	@RequestMapping("/registrarProducto")
-	public void registrarProducto(ProductoDTO productoDto) {
-		ProductosDAO producDao = new ProductosDAO();
-		producDao.registrarProducto(productoDto);
-	}
-	
-	@RequestMapping("/consultarProducto")
-	public ArrayList<ProductoDTO> consultarProducto(long codigo){
-		ProductosDAO producDao = new ProductosDAO();
-		return producDao.consultarProducto(codigo);
-	}
-	
-	@RequestMapping("/listarProducto")
-	public ArrayList<ProductoDTO> listaDeProductos() {
-		ProductosDAO producDao = new ProductosDAO();
-		return producDao.listaDeProductos();
-	}
-		
-	@RequestMapping("/eliminarProducto")
-	public void eliminarUProducto(long codigo) {
-		ProductosDAO producDao = new ProductosDAO();
-		producDao.eliminarProducto(codigo);
-	}
-	
-	
-	@RequestMapping("/editarProducto")
-	public void editarProducto(ProductoDTO ProductoDto){
-		ProductosDAO producDao = new ProductosDAO();
-		producDao.editarProducto(ProductoDto);
-	}
+    @Autowired
+    private IProductoService productoService;
+
+    @PostMapping("/crear")
+    public ResponseEntity<RespuestaServicioDTO> agregarProducto(@RequestBody Producto producto) {
+        RespuestaServicioDTO dto = productoService.addProduct(producto);
+
+        return ResponseEntity.status(dto.getStatus())
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(dto);
+    }
+
+
+    @GetMapping("/listar/{id}")
+    public ResponseEntity<RespuestaServicioDTO> obtenerProductos(@PathVariable("id") Long id) {
+        RespuestaServicioDTO dto = productoService.findById(id);
+
+        return ResponseEntity.status(dto.getStatus())
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(dto);
+    }
+
+    @GetMapping("/listar")
+    public ResponseEntity<RespuestaServicioDTO> obtenerProductos() {
+        RespuestaServicioDTO dto = productoService.findAll();
+
+        return ResponseEntity.status(dto.getStatus())
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(dto);
+    }
+
+    @PostMapping("/editar/{id}")
+    public ResponseEntity<RespuestaServicioDTO> editarProducto(@RequestBody Producto producto, @PathVariable("id") Long id) {
+        RespuestaServicioDTO dto = productoService.addProduct(producto);
+
+        return ResponseEntity.status(dto.getStatus())
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(dto);
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<RespuestaServicioDTO> eliminarProducto(@PathVariable("id") Long id) {
+        RespuestaServicioDTO dto = productoService.deleteById(id);
+
+        return ResponseEntity.status(dto.getStatus())
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(dto);
+    }
 }
