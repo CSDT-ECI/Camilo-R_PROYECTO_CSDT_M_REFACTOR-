@@ -256,6 +256,54 @@ ahora vamos a pedirle que nos ayude con las pruebas de unidad de un metodo en es
 <br/>
 
 
+sin embargo algunos test tenian algunos errores, entonces nosostros como  devs los modificaremos y adaptaremos para cumplir con la logica de negocio
+
+codigo con nuestro refactor
+```java
+@ExtendWith(MockitoExtension.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class ProductoServiceImplTest {
+
+    @Mock
+    private ProductoRepository productoRepository;
+    @InjectMocks
+    private ProductoServiceImpl productoService;
+
+    @BeforeAll
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
+
+
+    @Test
+    public void testUpdateProductSuccess() {
+        Long id = Long.valueOf(1L);
+        Producto producto = new Producto(id, "Producto de prueba", 3d, new Date());
+
+        when(productoRepository.findById(id)).thenReturn(Optional.of(producto));
+        when(productoRepository.save(producto)).thenReturn(producto);
+
+        RespuestaServicioDTO respuesta = productoService.updateProduct(id, producto);
+
+        assertEquals(HttpStatus.ACCEPTED.value(), respuesta.getStatus());
+        assertEquals(producto, respuesta.getData().get(0));
+    }
+
+    @Test
+    public void testUpdateProductFailure() {
+        Long id = Long.valueOf(1L);
+        Producto producto = new Producto(id, "Producto de prueba", 3d, new Date());
+        when(productoRepository.findById(id)).thenReturn(Optional.empty());
+
+        RespuestaServicioDTO respuesta = productoService.updateProduct(id, producto);
+
+        assertEquals(HttpStatus.NOT_FOUND.value(), respuesta.getStatus());
+        assertTrue(respuesta.getData().isEmpty());
+
+    }
+}
+```
+
 ### Conclusiones
 
 - En mi opinión las herramientas como las IA son útiles para desarrollar distintas tareas como lo son la generación de documentación y pruebas de unida, sin embargo, se debe estar siempre alerta, ya que no siempre dan respuesta coherente y ahí es donde nosotros entramos como desarrolladores a corregir y tomar de base lo que nos proporcionó la herramienta
