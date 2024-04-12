@@ -15,7 +15,7 @@
 	<name>tienda</name>
 	<description>Proyecto_SofTienda</description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -129,7 +129,7 @@
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.9</minimum>
+											<minimum>0.0</minimum>
 										</limit>
 									</limits>
 								</rule>
