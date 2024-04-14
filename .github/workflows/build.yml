@@ -37,4 +37,4 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B -f Proy_SoftTienda/pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=CVDS -Dsonar.projectName='CVDS-PROYECTO' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=${SONAR_TOKEN}
+        run: mvn -B -f Proy_SoftTienda/pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=CVDS -Dsonar.projectName='CVDS-PROYECTO' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_af3d0306c7e6021b55a392cf21cd3df8e27f90b3
