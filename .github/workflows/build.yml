@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - entregaFinalPrimerCorte/STATIC_CODE_ANALYZER
     pull_request:
       types: [ opened, synchronize, reopened ]
 
@@ -37,5 +36,5 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-#          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B -f Proy_SoftTienda/pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=test01 -Dsonar.projectName='SoftTienda' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=${SONAR_TOKEN}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        run: mvn -B -f Proy_SoftTienda/pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=CVDS -Dsonar.projectName='CVDS-PROYECTO' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=${SONAR_TOKEN}
