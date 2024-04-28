@@ -1,9 +1,11 @@
 
 # Arquitectural Smells
 
-## Sonnarcloud
+## Integrando Sonnar Cloud en el proyecto
 
 ## Arcan
+
+Arcan es una herramienta que nos permite 
 
 seguiremos los pasos descritos en el siguiente [tutorial](https://docs.arcan.tech/2.9.0/get_started/), en caso de tener problemas de acceso utilizar una vpn de USA o revisar el [Repositorio publico  arcan](https://github.com/Arcan-Tech/arcan-trial/tree/main).
 
@@ -86,8 +88,23 @@ java -jar DesigniteJava.jar -i C:\proyectos\Camilo-R_PROYECTO_CSDT_M_REFACTOR-\P
 ```
 
 
+nos encontraremos unos archivos csv, los cuales no mencionaran designCodeSmells 
 
-## Integrando Sonnar Cloud en el proyecto
+| Project Name   | Package Name    | Type Name             | Code Smell           |
+|----------------|-----------------|-----------------------|----------------------|
+| Proy_SoftTienda | com.soft.tienda | ClienteController     | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft.tienda | Controlador           | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft.tienda | ProductoController    | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft.tienda | ProveedorController   | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft.tienda | ServletInitializer    | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft.tienda | SwaggerConfig         | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft.tienda | UsuarioController     | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft.tienda | VentaController       | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft.tienda.DTO | DetalleVenta     | Unutilized Abstraction |
+| Proy_SoftTienda | com.soft1.tienda | SoftTiendaApplicationTests | Unutilized Abstraction |
+
+
+
 
 ### Referencias 
 
