@@ -1,4 +1,4 @@
-package com.soft.tienda.app;
+package com.soft.tienda.dto.app;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

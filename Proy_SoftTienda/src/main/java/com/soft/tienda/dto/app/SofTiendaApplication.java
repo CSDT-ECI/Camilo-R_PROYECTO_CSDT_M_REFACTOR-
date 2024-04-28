@@ -1,4 +1,4 @@
-package com.soft.tienda.app;
+package com.soft.tienda.dto.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
