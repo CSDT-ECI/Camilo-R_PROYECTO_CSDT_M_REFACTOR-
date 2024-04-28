@@ -103,8 +103,30 @@ nos encontraremos unos archivos csv, los cuales no mencionaran designCodeSmells
 | Proy_SoftTienda | com.soft.tienda.DTO | DetalleVenta     | Unutilized Abstraction |
 | Proy_SoftTienda | com.soft1.tienda | SoftTiendaApplicationTests | Unutilized Abstraction |
 
+Como podemos observar en el anterior reporte todos los smells de diseño, se encuentran en que existen clases, interfaces o metodos que no se utilizan en ninguna parte del codigo, con estasa identificaciones podemos buscarlas con ayuda de otras herramientas para garantizar la claridad y mantenibilidad del codigo
 
+ahora realizaremos un analisis segun los codeSmells de la implmentacion del proyecto original
 
+| Project Name   | Package Name              | Type Name          | Method Name               | Code Smell     |
+|----------------|---------------------------|--------------------|---------------------------|----------------|
+| Proy_SoftTienda | com.soft.tienda.config   | SwaggerConfig      | apiDocket                 | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.config   | SwaggerConfig      | getApiInfo                | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImpl | findAll                   | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImpl | findById                  | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImpl | findById                  | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImpl | addProduct                | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImpl | deleteById                | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImpl | deleteById                | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImpl | updateProduct             | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImpl | updateProduct             | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | UsuarioServiceImpl  | consultarUsuarioPorCorreoElectronico | Long Statement |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImplTest | testUpdateProductSuccess | Magic Number   |
+| Proy_SoftTienda | com.soft.tienda.services | ProductoServiceImplTest | testUpdateProductFailure | Magic Number   |
+
+gracias a este reporte podemos mencionar lo siguiente:
+
+- Posiblemente en el codigo fuente tiene un parametro numerico que en lugar de haber sido asignado en una variable con un nombre descriptivo, se coloco de manera literal. cauando problemas de mantenibilidad 
+- Existen varios metodos que nos da una alerta ya que pueden excesivamente largos, posiblemente en una no seperacion de responsabilidades de manera correcta
 
 ### Referencias 
 
