@@ -18,13 +18,13 @@ docker-compose -f docker-compose.yml --env-file .env up
 
 verificamos que inicie la creacion de imagenes
 <br/>
-<img src="images/26-Arcan-0.png." alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
+<img src="images/26-Arcan-0.png" alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
 <br/>
 
 ahora en nuestro navegador abriremos le puerto 3000 y si todo esta bien configurado veremos la siguiente pantalla
 
 <br/>
-<img src="images/26-Arcan-1.png." alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
+<img src="images/26-Arcan-1.png" alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
 <br/>
 
 ### proyecto original
@@ -38,7 +38,7 @@ arquitectura inicial
 Configuramos arcan para que haga un análisis del  proyecto original y nos encontramos con esta métrica de rigidez, que nos menciona que tan difícil puede ser intentar hacer un cambio en el proyecto, lo cual entre más alto se encuentre peor será
 
 <br/>
-<img src="images/26-Arcan-2.png." alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
+<img src="images/26-Arcan-2.png" alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
 <br/>
 
 Además, esta herramienta nos permite ver un gráfico de dependencia entre las clases
@@ -46,7 +46,7 @@ Además, esta herramienta nos permite ver un gráfico de dependencia entre las c
 
 
 <br/>
-<img src="images/26-Arcan-3.png." alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
+<img src="images/26-Arcan-3.png" alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
 <br/>
 
 Como podemos observar en el anterior gráfico, aunque pareciera que la lógica del código se encuentre separada por servicios, el % de dependencia es muy alto y en caso de añadir nuevas funcionalidades puede ser muy costoso y se deba hacer un reproceso de refactorización de código
@@ -62,13 +62,13 @@ Arquitectura propuesta
 configuramos arcan para que haga un análisis del  proyecto que hemos venido trabajando y como podemos observar la metrica de rigidez disminuyo y puede disminuir más ya que no se terminaron todos los componentes de la arquitectura propuesta
 
 <br/>
-<img src="images/26-Arcan-4.png." alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
+<img src="images/26-Arcan-4.png" alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
 <br/>
 
 grafico de dependencia entre las clases
 
 <br/>
-<img src="images/26-Arcan-5.png." alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
+<img src="images/26-Arcan-5.png" alt="25-Arcan.png" style="max-width: 80%;max-width: 80%;">
 <br/>
 
 en apoyo de el indicador de dependencia, podemos ver que se mantiene la separacion de responsabilidades pero con los cambios se puede llegar a realizar cambios y/o inyeccion de funcionalidades de una manera más transparente
