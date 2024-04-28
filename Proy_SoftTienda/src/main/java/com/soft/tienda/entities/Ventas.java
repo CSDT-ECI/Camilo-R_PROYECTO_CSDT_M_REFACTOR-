@@ -1,50 +1,30 @@
 package com.soft.tienda.entities;
 
-public class Ventas {
-	private long codigo_venta;
-	private long cedula_cliente;
-	private long cedula_usuario;
-	private double total_venta;
-	private double iva_venta;
-	private double valor_venta;
-	
-	
-	public long getCodigo_venta() {
-		return codigo_venta;
-	}
-	public void setCodigo_venta(long codigo_venta) {
-		this.codigo_venta = codigo_venta;
-	}
-	public long getCedula_cliente() {
-		return cedula_cliente;
-	}
-	public void setCedula_cliente(long cedula_cliente) {
-		this.cedula_cliente = cedula_cliente;
-	}
-	public long getCedula_usuario() {
-		return cedula_usuario;
-	}
-	public void setCedula_usuario(long cedula_usuario) {
-		this.cedula_usuario = cedula_usuario;
-	}
-	public double getTotal_venta() {
-		return total_venta;
-	}
-	public void setTotal_venta(double total_venta) {
-		this.total_venta = total_venta;
-	}
-	public double getIva_venta() {
-		return iva_venta;
-	}
-	public void setIva_venta(double iva_venta) {
-		this.iva_venta = iva_venta;
-	}
-	public double getValor_venta() {
-		return valor_venta;
-	}
-	public void setValor_venta(double valor_venta) {
-		this.valor_venta = valor_venta;
-	}
-	
-	
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+@Table(name = "ventas")
+public class Ventas implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long codigo;
+
+//    @OneToOne(fetch = FetchType.EAGER)
+//    private Usuario usuario;
+
+//    private String cedula_cliente;
+
+    private Double totalValorVenta;
+
+    private Double ivaVenta;
 }
