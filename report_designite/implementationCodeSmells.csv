@@ -1,0 +1,14 @@
+Project Name,Package Name,Type Name,Method Name,Code Smell
+Proy_SoftTienda,com.soft.tienda.config,SwaggerConfig,apiDocket,Long Statement
+Proy_SoftTienda,com.soft.tienda.config,SwaggerConfig,getApiInfo,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImpl,findAll,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImpl,findById,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImpl,findById,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImpl,addProduct,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImpl,deleteById,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImpl,deleteById,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImpl,updateProduct,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImpl,updateProduct,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,UsuarioServiceImpl,consultarUsuarioPorCorreoElectronico,Long Statement
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImplTest,testUpdateProductSuccess,Magic Number
+Proy_SoftTienda,com.soft.tienda.services,ProductoServiceImplTest,testUpdateProductFailure,Magic Number
