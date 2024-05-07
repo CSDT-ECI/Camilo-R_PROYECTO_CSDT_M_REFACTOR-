@@ -2,7 +2,7 @@ package com.soft.tienda.services;
 
 import com.soft.tienda.entities.Usuario;
 import com.soft.tienda.exceptions.UsuarioException;
-import com.soft.tienda.repositories.UserRespository;
+import com.soft.tienda.repositories.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 class UsuarioServiceImplTest {
 
     @Mock
-    private UserRespository userRespository;
+    private UserRepository userRepository;
 
     @InjectMocks
     private UsuarioServiceImpl usuarioService;
@@ -30,7 +30,7 @@ class UsuarioServiceImplTest {
     void consultarUsuarioPorCorreoElectronicoLanzaExcepcionPorNoExistirCorreo() {
         String correoDummy = "correo@falso.com";
 
-        when(userRespository.obtenerUsuarioPorCorreo(anyString())).thenReturn(null);
+        when(userRepository.obtenerUsuarioPorCorreo(anyString())).thenReturn(null);
 
 
         Assertions.assertThrows(UsuarioException.class, () -> usuarioService.consultarUsuarioPorCorreoElectronico(correoDummy));
@@ -41,7 +41,7 @@ class UsuarioServiceImplTest {
         String correoDummy = "correo@falso.com";
         Usuario usuarioDummy = Mockito.mock(Usuario.class);
 
-        when(userRespository.obtenerUsuarioPorCorreo(anyString())).thenReturn(usuarioDummy);
+        when(userRepository.obtenerUsuarioPorCorreo(anyString())).thenReturn(usuarioDummy);
 
         Usuario usuarioObtenido = usuarioService.consultarUsuarioPorCorreoElectronico(correoDummy);
 

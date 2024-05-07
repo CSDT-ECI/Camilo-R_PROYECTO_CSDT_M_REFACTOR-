@@ -1,7 +1,10 @@
 package com.soft.tienda.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,6 +14,10 @@ import java.util.List;
  * @version 1.0
  * @since 3/19/2024
  */
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "usuarios")
@@ -30,8 +37,8 @@ public class Usuario implements Serializable {
     private String apellido;
 
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "role_id"), uniqueConstraints = {
-            @UniqueConstraint(columnNames = {"usuario_id", "role_id"})})
-    private List<Rol> roles;
+//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+//    @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "role_id"), uniqueConstraints = {
+//            @UniqueConstraint(columnNames = {"usuario_id", "role_id"})})
+//    private List<Rol> roles;
 }
